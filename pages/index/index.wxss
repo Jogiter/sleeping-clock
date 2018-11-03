@@ -1,0 +1,36 @@
+text {
+  font-size: 14px;
+  color: rgba(16, 16, 16, 1);
+  line-height: 20px;
+}
+.tips {
+  margin-top: 30px;
+  padding: 20px;
+  color: #FF101010;
+  border: 1px solid #FF101010;
+}
+.tips text {
+  margin-bottom: 20px;
+}
+.footer {
+  margin-top: 40px;
+}
+.notset .primary {
+  margin-top: 15px;
+}
+.setted text {
+  line-height: 22px;
+  color: rgba(166, 166, 166, 1);
+  font-size: 16px;
+  text-align: center;
+  font-family: "PingFangSC-regular";
+}
+.setted a {
+  margin-top: 10px;
+  line-height: 22px;
+  height: 30px;
+  color: rgba(229, 28, 35, 1);
+  font-size: 16px;
+  text-align: center;
+  font-family: "PingFangSC-regular";
+}

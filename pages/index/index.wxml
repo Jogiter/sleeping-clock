@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="wrapper">
+    <text>每天烦躁压力大睡不着？习惯性熬夜？不习惯孤独入睡？来试试哄睡闹钟吧</text>
+    <view class="tips">
+      <text>每天一段暖心舒缓的美文、一张让你心旷神怡的图片，让你沉静下来</text>
+      <text>也有其他用户投稿的温馨哄睡话语，让你睡前感受心的温暖</text>
+      <text>做个健康早睡的人，从这一刻开始吧~</text>
+    </view>
+    <view class="footer center notset" wx:if="{{!hasSetClock}}">
+      <text>今天已有{{ info.count }}人睡了</text>
+      <view class="btn primary" bindtap="setClock">设置我的哄睡闹钟</view>
+    </view>
+    <view class="footer center setted" wx:else>
+      <text>我的设置</text>
+      <text>{{orderTxt}}</text>
+      <text class="bdb" bindtap="renew">续订</text>
+    </view>
+  </view>
+</view>

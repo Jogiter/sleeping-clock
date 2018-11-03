@@ -1,0 +1,43 @@
+.title {
+  width: 80px;
+  height: 22px;
+  color: rgba(16, 16, 16, 1);
+  font-size: 16px;
+  text-align: left;
+}
+.content {
+  width: 210px;
+  color: rgba(159, 159, 159, 1);
+  margin-right: 10px;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: left;
+}
+.content text {
+  margin-top: 14px;
+}
+.ipt {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  color: rgba(136, 136, 136, 1);
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid rgba(187, 187, 187, 1);
+}
+.btn-group {
+  margin-top: 90px;
+}
+.btn-group .btn {
+  width: 140px;
+  line-height: 35px;
+  border-radius: 4px;
+  color: rgba(16, 16, 16, 1);
+  font-size: 14px;
+  text-align: center;
+  font-family: "Microsoft Yahei";
+  border: 1px solid rgba(187, 187, 187, 1);
+}
+.btn text {
+  display: block;
+}

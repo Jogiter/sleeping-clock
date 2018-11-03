@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="wrapper">
+    <view class="bgi" style="background-image: url('{{msgInfo.image}}')">
+      <view class="msg">
+        <view class="header">
+          <image class="avatar" src="{{msgInfo.avatar}}"></image>
+          <text class="name">{{msgInfo.nickname}}</text>
+        </view>
+        <!--<view wx-if="hasMusic">
+            <audio poster="{{audio.poster}}" name="{{audio.name}}" author="{{audio.author}}" src="{{audio.src}}" id="myAudio" controls loop></audio>
+        </view>
+        <view wx:else></view>-->
+        <view class="text">
+          <text>{{msgInfo.desc}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="footer center">
+      <text class="tips">今天已有560人睡了，你也快睡吧</text>
+      <view class="btn primary" bindtap="goodNight">转发朋友圈，道声晚安</view>
+    </view>
+  </view>
+</view>

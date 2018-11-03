@@ -1,0 +1,42 @@
+.center {
+  display: block;
+  text-align: center;
+}
+.flex {
+  display: flex;
+  box-sizing: border-box;
+}
+.jcb {
+  justify-content: space-between;
+}
+.bca {
+  justify-content: space-around;
+}
+.primary {
+  width: 171px;
+  line-height: 40px;
+  border-radius: 4px;
+  color: rgba(16, 16, 16, 1);
+  font-size: 14px;
+  text-align: center;
+  font-family: "Microsoft Yahei";
+  border: 1px solid rgba(187, 187, 187, 1);
+  margin: auto;
+}
+.wrapper {
+  padding: 30px 30px;
+}
+.btn {
+  border: 1px solid #FFBBBBBB;
+  font-size: 14px;
+  text-align: center;
+  color: #101010;
+  font-family: 'Microsoft Yahei';
+  box-sizing:border-box;
+}
+text {
+  display: inline-block;
+}
+.bdb {
+  border-bottom: 1px solid #ccc;
+}

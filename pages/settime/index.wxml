@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="wrapper">
+    <view class="flex jcb">
+      <text class="title">闹钟时间</text>
+      <view class="content">
+        <view class="ipt">
+          <picker mode="time" :value="time" start="00:00" end="23:59" bindchange="timeChange">
+            <view class="picker">
+              {{time}}
+            </view>
+          </picker>
+        </view>
+        <text>每天到了设置时间，会通过小程序的服务消息推送哄睡内容给你</text>
+      </view>
+    </view>
+  </view>
+  <view class="btn-group flex jcb">
+    <view class="btn primary" bindtap="payPush7">
+      <text class="day">连续推送7天</text>
+      <text class="price">￥5</text>
+    </view>
+    <view class="btn primary" bindtap="payPush30">
+      <text class="day">连续推送30天</text>
+      <text class="price">￥15</text>
+    </view>
+  </view>
+</view>
