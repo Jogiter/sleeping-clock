@@ -75,9 +75,9 @@ id: 用户的 openid
 }
 ```
 
-orderlist: 用户的下单记录
-pushlist：用户的推送记录
-count：今日入睡人数
++ orderlist: 用户的下单记录
++ pushlist：用户的推送记录
++ count：今日入睡人数
 
 
 2. 获取最新的推送消息
@@ -101,15 +101,14 @@ id: 推送消息的 id
 	"code": 0,
 	"msg": "",
 	"data": {
-    "id": 1,
-    "avatar": "http://img.jogiter.cn/lm.jpg",
-    "nickname": "federer",
-    "title": "测试1",
-    "desc": "【乔迁献礼】新购存储、直播特惠资源包，享5折优惠，更有短视频 SDK、CDN 流量、日志分
-  析等限时赠送！购买特惠资源包请至“财务统计->购买资源包”处进行购买。",
-    "image": "http://img.jogiter.cn/bg.jpg",
-    "createdAt": "2018-10-26T03:33:58.000Z",
-    "updatedAt": "2018-10-26T03:33:58.000Z"
+      "id": 1,
+      "avatar": "http://img.jogiter.cn/lm.jpg",
+      "nickname": "federer",
+      "title": "测试1",
+      "desc": "【乔迁献礼】新购存储、直播特惠资源包，享5折优惠，更有短视频 SDK、CDN 流量、日志分析等限时赠送！购买特惠资源包请至“财务统计->购买资源包”处进行购买。",
+      "image": "http://img.jogiter.cn/bg.jpg",
+      "createdAt": "2018-10-26T03:33:58.000Z",
+      "updatedAt": "2018-10-26T03:33:58.000Z"
   }
 }
 ```
