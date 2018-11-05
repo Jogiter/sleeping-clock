@@ -1,4 +1,4 @@
-# 小程序
+﻿# 小程序
 
 + [小程序调起支付API](https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=7_7&index=5)
 + [小程序调起支付API](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/payment/wx.requestPayment.html)
@@ -25,7 +25,7 @@ payment: function (cb) {
 
 暂不支持 `https`
 
-1. 获取用户信息及闹钟信息
+1. 1获取用户信息及闹钟信息
 
 **method**
 
