@@ -31,11 +31,11 @@ App({
               success:function(res){
                 console.log(res.data);
                 if(res){
-                  _this.globalData.openid=res.data.openid,
+                  _this.globalData.openid=res.data,
                   //存入本地
                   wx.setStorage({
                     key:"openid",
-                    data:res.data.openid,
+                    data:res.data,
                     success:function(){
                       console.log('openid已经存到本地');
                     }
