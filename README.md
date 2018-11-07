@@ -25,6 +25,31 @@ payment: function (cb) {
 
 暂不支持 `https`
 
+1. 获取用户 openid
+
+**method**
+
+`GET`
+
+**url**
+
+`/wx/openid?code=code`
+
+**param**
+
+code: [wx.login 返回的 code](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/login/wx.login.html)
+
+**response**
+
+```json
+{
+	"code": 0,
+	"msg": "",
+	"data": "openid"
+}
+```
+
+
 1. 1获取用户信息及闹钟信息
 
 **method**
