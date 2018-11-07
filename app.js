@@ -9,57 +9,89 @@ App({
 
     const domain = 'http://localhost:3000'
 
-    function getOpenId(success = function() {}) {
+
+
+//用户登陆获取openid
+  getOpenId();
+
+
+    function getOpenId() {
       wx.login({
-        success (res) {
+        success:function (res) {
           if (res.code) {
-            _this.globalData.code = res.code
+            console.log(res.code);
             //发起网络请求
             wx.request({
-              url: 'https://api.weixin.qq.com/sns/jscode2session',
+              url: '己方服务器地址',
               data: {
-                appid: 'wx6f06cf8a9c394917',
-                secret: 'SECRET',
                 js_code: res.code,
-                grant_type: 'authorization_code'
+
               },
-              success
+              //success后，给我返回一个res数据包，里面是openid
+              success:function(res){
+                console.log(res.data);
+                if(res){
+                  _this.globalData.openid=res.data.openid,
+                  //存入本地
+                  wx.setStorage({
+                    key:"openid",
+                    data:res.data.openid,
+                    success:function(){
+                      console.log('openid已经存到本地');
+                    }
+                  })
+              }
+            },
             })
-          } else {
+          }
+          else {
             console.log('登录失败！' + res.errMsg)
           }
         }
       })
     }
 
-    function getUserInfo(id, done) {
-      return wx.request({
-        url: `${domain}/user`,
-        data: {
-          id: id
-        },
-        success ({data}) {
-          done && done(data)
+//检查用户设定，如果用户已经授权可以直接获取userinfo信息
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          wx.getUserInfo({
+            success: res => {
+              // 可以将 res 发送给后台解码出 unionId
+              this.globalData.userInfo = res.userInfo;
+
+
+
+              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+              // 所以此处加入 callback 以防止这种情况
+              if (this.userInfoReadyCallback) {
+                this.userInfoReadyCallback(res)
+              }
+
+            //存入本地
+            wx.setStorage({
+
+              key:"userInfo",
+              data:res.userInfo,
+              success:function(){
+                console.log('userInfo已经存到本地');
+              }
+
+            })
+
+
+
+          }
+          })
         }
-      })
-    }
-
-    // 登录
-    getOpenId(res => {
-      // 获取 openid，支付 以及添加订阅记录
-      _this.globalData.openid = res.data
-
-      if (this.openIdReadyCallback) {
-        this.openIdReadyCallback(res)
       }
-      getUserInfo(res.id || '1111', ({ data }) => {
-        _this.globalData.server = data
-
-        if (this.userInfoReadyCallback) {
-          this.userInfoReadyCallback(res)
-        }
-      })
     })
+
+
+
+
+
 
     // 获取用户信息
     // wx.getSetting({
@@ -83,7 +115,31 @@ App({
     // })
   },
   globalData: {
+    openid: null,
     userInfo: null,
-    server: null
+  },
+
+  //把用户信息传给后台建立用户数据
+register: function(){
+
+  var _this=this
+  if(_this.globalData.openid && _this.globalData.userInfo){
+    wx.request({
+      url:"己方服务器",
+      data:{
+        openid:_this.globalData.openid,
+        nickName:_this.globalData.userInfo.nickName,
+        avatarUrl:_this.globalData.userInfo.avatarUrl,
+        gender:_this.globalData.userInfo.gender,
+        province:_this.globalData.userInfo.province,
+        city:_this.globalData.userInfo.city,
+
+      },
+      success:function(res){
+        console.log("传值成功");
+      }
+
+    })
+  }
   }
 })

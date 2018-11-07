@@ -9,7 +9,7 @@
     </view>
     <view class="footer center notset" wx:if="{{!hasSetClock}}">
       <text>今天已有{{ info.count }}人睡了</text>
-      <view class="btn primary" bindtap="setClock">设置我的哄睡闹钟</view>
+      <button open-type='getUserInfo' class='button1' bindgetuserinfo='getUserInfo'>设置我的哄睡闹钟</button>
     </view>
     <view class="footer center setted" wx:else>
       <text>我的设置</text>
