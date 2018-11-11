@@ -142,3 +142,26 @@ id: 推送消息的 id
   }
 }
 ```
+
+3. 下单接口
+
+
+**method**
+
+`GET`
+
+**url**
+
+`/setclock/`
+
+**param**
+
+uid: opendid,
+start_date: new Date('2018-10-28'),
+push_days: 21,
+push_time: '16:30'
+
+
+
+
+
