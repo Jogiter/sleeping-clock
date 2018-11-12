@@ -8,7 +8,8 @@
 .content {
   width: 210px;
   color: rgba(159, 159, 159, 1);
-  margin-right: 10px;
+  margin-right: 20rpx;
+  margin-bottom: 60rpx;
   font-size: 16px;
   line-height: 22px;
   text-align: left;
@@ -26,14 +27,14 @@
   border: 1px solid rgba(187, 187, 187, 1);
 }
 .btn-group {
-  margin-top: 90px;
+  margin-top: 120rpx;
 }
 .btn-group .btn {
   width: 140px;
-  line-height: 35px;
+  line-height: 50px;
   border-radius: 4px;
   color: rgba(16, 16, 16, 1);
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
   font-family: "Microsoft Yahei";
   border: 1px solid rgba(187, 187, 187, 1);

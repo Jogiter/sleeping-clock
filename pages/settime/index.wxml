@@ -2,6 +2,19 @@
 <view class="container">
   <view class="wrapper">
     <view class="flex jcb">
+      <text class="title">开始日期</text>
+      <view class="content">
+        <view class="ipt">
+          <picker mode="date" start="{{start_date}}" end="2022-01-01" bindchange="dateChange">
+            <view class="picker">
+              {{date}}
+            </view>
+          </picker>
+        </view>
+
+      </view>
+    </view>
+    <view class="flex jcb">
       <text class="title">闹钟时间</text>
       <view class="content">
         <view class="ipt">
@@ -16,13 +29,13 @@
     </view>
   </view>
   <view class="btn-group flex jcb">
-    <view class="btn primary" bindtap="payPush7">
+    <view class="btn primary" data-day="7" bindtap="push">
       <text class="day">连续推送7天</text>
-      <text class="price">￥5</text>
+
     </view>
-    <view class="btn primary" bindtap="payPush30">
+    <view class="btn primary" data-day="30" bindtap="push">
       <text class="day">连续推送30天</text>
-      <text class="price">￥15</text>
+
     </view>
   </view>
 </view>

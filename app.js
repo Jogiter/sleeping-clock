@@ -1,6 +1,6 @@
 //app.js
 App({
-  onLaunch: function () {
+  onLaunch: function() {
     var _this = this
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -11,47 +11,46 @@ App({
 
 
 
-//用户登陆获取openid
-  getOpenId();
+    //用户登陆获取openid
+    getOpenId();
 
 
     function getOpenId() {
       wx.login({
-        success:function (res) {
+        success: function(res) {
           if (res.code) {
             console.log(res.code);
             //发起网络请求
             wx.request({
-              url: '己方服务器地址',
+              url: 'http://alarm-env.kf4bear4rq.ap-northeast-1.elasticbeanstalk.com/wx/openid',
               data: {
-                js_code: res.code,
+                code: res.code,
 
               },
               //success后，给我返回一个res数据包，里面是openid
-              success:function(res){
+              success: function(res) {
                 console.log(res.data);
-                if(res){
-                  _this.globalData.openid=res.data,
-                  //存入本地
-                  wx.setStorage({
-                    key:"openid",
-                    data:res.data,
-                    success:function(){
-                      console.log('openid已经存到本地');
-                    }
-                  })
-              }
-            },
+                if (res.data) {
+                  _this.globalData.openid = res.data.openid,
+                    //存入本地
+                    wx.setStorage({
+                      key: "openid",
+                      data: res.data.openid,
+                      success: function() {
+                        console.log('openid已经存到本地');
+                      }
+                    })
+                }
+              },
             })
-          }
-          else {
+          } else {
             console.log('登录失败！' + res.errMsg)
           }
         }
       })
     }
 
-//检查用户设定，如果用户已经授权可以直接获取userinfo信息
+    //检查用户设定，如果用户已经授权可以直接获取userinfo信息
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
@@ -69,20 +68,20 @@ App({
                 this.userInfoReadyCallback(res)
               }
 
-            //存入本地
-            wx.setStorage({
+              //存入本地
+              wx.setStorage({
 
-              key:"userInfo",
-              data:res.userInfo,
-              success:function(){
-                console.log('userInfo已经存到本地');
-              }
+                key: "userInfo",
+                data: res.userInfo,
+                success: function() {
+                  console.log('userInfo已经存到本地');
+                }
 
-            })
+              })
 
 
 
-          }
+            }
           })
         }
       }
@@ -120,26 +119,26 @@ App({
   },
 
   //把用户信息传给后台建立用户数据
-register: function(){
+  register: function() {
 
-  var _this=this
-  if(_this.globalData.openid && _this.globalData.userInfo){
-    wx.request({
-      url:"己方服务器",
-      data:{
-        openid:_this.globalData.openid,
-        nickName:_this.globalData.userInfo.nickName,
-        avatarUrl:_this.globalData.userInfo.avatarUrl,
-        gender:_this.globalData.userInfo.gender,
-        province:_this.globalData.userInfo.province,
-        city:_this.globalData.userInfo.city,
+    var _this = this
+    if (_this.globalData.openid && _this.globalData.userInfo) {
+      wx.request({
+        url: "己方服务器",
+        data: {
+          openid: _this.globalData.openid,
+          nickName: _this.globalData.userInfo.nickName,
+          avatarUrl: _this.globalData.userInfo.avatarUrl,
+          gender: _this.globalData.userInfo.gender,
+          province: _this.globalData.userInfo.province,
+          city: _this.globalData.userInfo.city,
 
-      },
-      success:function(res){
-        console.log("传值成功");
-      }
+        },
+        success: function(res) {
+          console.log("传值成功");
+        }
 
-    })
-  }
+      })
+    }
   }
 })

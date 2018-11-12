@@ -29,7 +29,7 @@ Page({
   goodNight: function () {
     console.log('good night');
   },
-  onLoad: function() {
+  onLoad: function(options) {
     console.log(app.globalData);
     console.log(app.globalData.userInfo);
     if (app.globalData.userInfo) {
