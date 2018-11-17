@@ -52,6 +52,7 @@ Page({
 
   push: function(event) {
     //判断日期和时间是否都选择了
+    console.log(event.detail);
     if (!this.data.hasDate) {
 
       wx.showModal({
@@ -79,14 +80,18 @@ Page({
     } else {
       console.log('选择完成');
       //提交订单到后台
-      console.log(event.currentTarget.dataset.day);
+      console.log(event.detail.target.dataset.day);
+      console.log(event.detail.formId);
       wx.request({
         url: "http://alarm-env.ap-northeast-1.elasticbeanstalk.com/setclock",
+        method:"POST",
         data: {
           uid: app.globalData.openid,
           start_date: this.data.date,
-          push_days: event.currentTarget.dataset.day,
+          push_days: event.detail.target.dataset.day,
           push_time: this.data.time,
+          template_id:event.detail.formId,
+
         },
 
         success: function() {

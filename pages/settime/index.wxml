@@ -1,11 +1,12 @@
 <!--index.wxml-->
+<form bindsubmit="push" report-submit="true">
 <view class="container">
   <view class="wrapper">
     <view class="flex jcb">
       <text class="title">开始日期</text>
       <view class="content">
         <view class="ipt">
-          <picker mode="date" start="{{start_date}}" end="2022-01-01" bindchange="dateChange">
+          <picker name='date' mode="date" start="{{start_date}}" end="2022-01-01" bindchange="dateChange">
             <view class="picker">
               {{date}}
             </view>
@@ -18,7 +19,7 @@
       <text class="title">闹钟时间</text>
       <view class="content">
         <view class="ipt">
-          <picker mode="time" :value="time" start="00:00" end="23:59" bindchange="timeChange">
+          <picker name='time' mode="time" :value="time" start="00:00" end="23:59" bindchange="timeChange">
             <view class="picker">
               {{time}}
             </view>
@@ -29,13 +30,14 @@
     </view>
   </view>
   <view class="btn-group flex jcb">
-    <view class="btn primary" data-day="7" bindtap="push">
+    <button class="btn primary" data-day="7" formType="submit">
       <text class="day">连续推送7天</text>
 
-    </view>
-    <view class="btn primary" data-day="30" bindtap="push">
+    </button>
+    <button class="btn primary" data-day="30" formType="submit">
       <text class="day">连续推送30天</text>
 
-    </view>
+    </button>
   </view>
 </view>
+</form>

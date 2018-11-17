@@ -33,6 +33,9 @@ Page({
 //拼凑成订单日期数据
   setOrderText: function(userinfo) {
     var _this=this;
+    console.log(userinfo.start_date)
+    console.log(userinfo.push_days)
+
     let start = new Date(userinfo.start_date).toLocaleDateString().split('/').join('.')
     let end = new Date(new Date(userinfo.start_date).getTime() + 3600 * 1000 * 24 * userinfo.push_days).toLocaleDateString().split('/').join('.')
     let txt = `${start}-${end} 每天 ${userinfo.push_time}`
@@ -186,9 +189,10 @@ else{
 
           if (res.data.data.orderlist.length > 0) {
             _this.setData({
-              orderinfo: res.data.data.orderlist,
+              orderinfo: res.data.data.orderlist[0],
             })
-            console.log("orderinfo"+_this.data.orderinfo);
+            console.log(res.data.data.orderlist);
+            console.log(_this.data.orderinfo);
           }
 
           //给count赋值
