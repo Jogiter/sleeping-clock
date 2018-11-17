@@ -28,6 +28,7 @@ Page({
       time: e.detail.value,
       hasTime: true,
     })
+    console.log(this.data.time);
   },
 
 
@@ -93,7 +94,7 @@ Page({
           wx.redirectTo({
             url: "../index/index",
           })
-          console.log('传输完成');
+          console.log('下单完成');
         }
       })
 
