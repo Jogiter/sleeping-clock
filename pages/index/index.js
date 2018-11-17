@@ -26,24 +26,6 @@ Page({
     });
   },
 
-  setOrderText: function(userinfo) {
-    let start = new Date(userinfo.start_date)
-      .toLocaleDateString()
-      .split("/")
-      .join(".");
-    let end = new Date(
-      new Date(userinfo.start_date).getTime() +
-        3600 * 1000 * 24 * userinfo.push_days
-    )
-      .toLocaleDateString()
-      .split("/")
-      .join(".");
-    let txt = `${start}-${end} 每天 ${userinfo.push_time}`;
-    this.setData({
-      orderTxt: txt
-    });
-  },
-
   getUserInfo: function(e) {
     console.log(e);
     app.globalData.userInfo = e.detail.userInfo;
@@ -70,89 +52,97 @@ Page({
     }
   },
 
+  // getUserInfo: function(e) {
+  //   console.log(e);
+  //   app.globalData.userInfo = e.detail.userInfo;
+  //   this.setData({
+  //     userInfo: e.detail.userInfo,
+  //     hasUserInfo: true
+  //   });
+  // },
+
   onLoad: function() {
-    //获取用户userInfo
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      });
-      wx.setStorage({
-        key: "userInfo",
-        data: app.globalData.userInfo,
-        success: function() {
-          console.log("已有用户信息" + app.globalData.userInfo);
-        }
-      });
-    } else if (this.data.canIUse) {
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        app.globalData.userInfo = res.userInfo;
+    let _this = this;
+    const domain = "https://jogiter.ap-northeast-1.elasticbeanstalk.com";
 
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        });
-        wx.setStorage({
-          key: "userInfo",
-          data: res.userInfo,
-          success: function() {
-            console.log("已有用户信息2" + res.userInfo);
-          }
-        });
-      };
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
+    //用户登陆获取openid
+    function getOpenid(cb) {
+      wx.login({
         success: function(res) {
-          app.globalData.userInfo = res.userInfo;
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          });
-          wx.setStorage({
-            key: "userInfo",
-            data: res.userInfo,
-            success: function() {
-              console.log("已有用户信息3" + res.userInfo);
-            }
-          });
+          let code = res.code;
+          console.log(`code=>${code}`);
+          if (code) {
+            //发起网络请求
+            wx.request({
+              url: `${domain}/wx/openid?code=${code}`,
+              success: function({ data }) {
+                let openid = data.data.openid;
+                console.log(`openid=>${openid}`);
+                //存入本地
+                wx.setStorage({
+                  key: "openid",
+                  data: openid,
+                  success: function() {
+                    console.log("openid已经存到本地");
+                  }
+                });
+                cb(null, openid);
+              }
+            });
+          } else {
+            console.log("登录失败！" + res.errMsg);
+            cb(res.errMsg);
+          }
         }
       });
     }
 
-    //如果用户有userinfo和openid，立即执行注册register
-    if (this.data.hasUserInfo) {
-      if (app.globalData.openid) {
-        app.register();
-      }
-    }
-
-    //如果用户有openid,则请求orderlist数据，并执行得出orderTxt
-    console.log(app.globalData);
-    if (app.globalData.openid) {
+    function getUser(openid, cb) {
       wx.request({
-        url: `${domain}/user`,
-        data: {
-          id: app.globalData.openid
-        },
-        success: function(res) {
-          console.log(res);
-          if (res.data.orderlist.length > 0) {
-            this.setData({
-              orderinfo: res.data.orderlist
-            });
-          }
-
-          if (this.data.orderinfo) {
-            setOrderText(this.data.orderinfo);
-            this.setData({
-              hasSetClock: true
-            });
-          }
+        url: `${domain}/user?id=${openid}`,
+        success: function({ data }) {
+          cb(null, data);
         }
       });
     }
+
+    function getOrderText(userinfo) {
+      let start = new Date(userinfo.start_date)
+        .toLocaleDateString()
+        .split("/")
+        .join(".");
+      let end = new Date(
+        new Date(userinfo.start_date).getTime() +
+          3600 * 1000 * 24 * userinfo.push_days
+      )
+        .toLocaleDateString()
+        .split("/")
+        .join(".");
+      let txt = `${start}-${end} 每天 ${userinfo.push_time}`;
+      return txt;
+    }
+
+    getOpenid((err, openid) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      getUser(openid, (err, res) => {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        if (res.code === 0) {
+          let data = res.data;
+          console.log(data);
+
+          _this.setData({
+            hasSetClock: data.orderlist.length > 0,
+            count: data.count,
+            orderTxt: getOrderText(data.orderlist[0] || {})
+          });
+        }
+      });
+    });
   }
 });

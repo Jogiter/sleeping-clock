@@ -23,7 +23,7 @@ fail (res) { }
 
 域名： `http://alarm-env.kf4bear4rq.ap-northeast-1.elasticbeanstalk.com/`
 
-暂不支持 `https`
+~~暂不支持 `https`~~
 
 1.  获取用户 openid
 
@@ -143,8 +143,7 @@ id: 推送消息的 id
 }
 ```
 
-3. 下单接口
-
+3.  下单接口
 
 **method**
 
@@ -160,8 +159,3 @@ id: 推送消息的 id
 - start_date: new Date('2018-10-28'),
 - push_days: 21,
 - push_time: '16:30'
-
-
-
-
-

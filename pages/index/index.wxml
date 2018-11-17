@@ -8,12 +8,12 @@
       <text>做个健康早睡的人，从这一刻开始吧~</text>
     </view>
     <view class="footer center notset" wx:if="{{!hasSetClock}}">
-      <text>今天已有{{ info.count }}人睡了</text>
+      <text>今天已有{{ count }}人睡了</text>
       <button open-type='getUserInfo' class='button1' bindgetuserinfo='getUserInfo'>设置我的哄睡闹钟</button>
     </view>
     <view class="footer center setted" wx:else>
-      <text>我的设置</text>
-      <text>{{orderTxt}}</text>
+      <text class="center">我的设置</text>
+      <text class="center">{{orderTxt}}</text>
       <view class="bdb" bindtap="renew">续订</view>
     </view>
   </view>
