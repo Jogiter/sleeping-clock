@@ -21,7 +21,7 @@ fail (res) { }
 
 ## API
 
-域名： `http://alarm-env.kf4bear4rq.ap-northeast-1.elasticbeanstalk.com/`
+域名： `http://alarm-env.ap-northeast-1.elasticbeanstalk.com/`
 
 暂不支持 `https`
 
