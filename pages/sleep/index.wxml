@@ -7,10 +7,7 @@
           <image class="avatar" src="{{msgInfo.avatar}}"></image>
           <text class="name">{{msgInfo.nickname}}</text>
         </view>
-        <!--<view wx-if="hasMusic">
-            <audio poster="{{audio.poster}}" name="{{audio.name}}" author="{{audio.author}}" src="{{audio.src}}" id="myAudio" controls loop></audio>
-        </view>
-        <view wx:else></view>-->
+        <!--<view wx-if="hasMusic"> <audio poster="{{audio.poster}}" name="{{audio.name}}" author="{{audio.author}}" src="{{audio.src}}" id="myAudio" controls loop></audio> </view> <view wx:else></view>-->
         <view class="text">
           <text>{{msgInfo.desc}}</text>
         </view>

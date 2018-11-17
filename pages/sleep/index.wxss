@@ -4,15 +4,18 @@
   border-bottom: 1px solid rgba(187, 187, 187, 1);
   min-height: 260px;
 }
+
 .bgi {
   background-size: 100% auto;
   background-repeat: no-repeat;
   border-radius: 4px;
   padding: 0 10px;
 }
+
 .msg .header {
   margin-bottom: 20px;
 }
+
 .msg .header image {
   width: 30px;
   height: 30px;
@@ -21,30 +24,33 @@
   border: 1px solid rgba(187, 187, 187, 1);
   text-align: left;
   font-family: "PingFangSC-regular";
-  border-radius:50%;
-  vertical-align:top;
+  border-radius: 50%;
+  vertical-align: top;
   display: inline-block;
   margin-right: 15px;
   box-sizing: border-box;
 }
+
 .msg .header .name {
   height: 30px;
   line-height: 30px;
   color: rgba(16, 16, 16, 1);
   font-size: 16px;
 }
-.msg .text {
 
-}
+.msg .text {}
+
 .msg .text text {
   color: rgba(16, 16, 16, 1);
   font-size: 14px;
   line-height: 22px;
   text-align: left;
 }
+
 .footer {
   padding: 30px;
 }
+
 .footer .tips {
   width: 260px;
   color: rgba(16, 16, 16, 1);
@@ -52,6 +58,7 @@
   line-height: 20px;
   text-align: center;
 }
+
 .footer .btn {
   margin-top: 10px;
 }
