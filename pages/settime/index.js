@@ -11,7 +11,6 @@ Page({
     start_date: {},
     userInfo: {},
     hasUserInfo: false,
-    hasSetClock: false,
     canIUse: wx.canIUse("button.open-type.getUserInfo")
   },
 
@@ -81,7 +80,7 @@ Page({
       //提交订单到后台
       console.log(event.currentTarget.dataset.day);
       wx.request({
-        url: "http://alarm-env.kf4bear4rq.ap-northeast-1.elasticbeanstalk.com/setclock",
+        url: "http://alarm-env.ap-northeast-1.elasticbeanstalk.com/setclock",
         data: {
           uid: app.globalData.openid,
           start_date: this.data.date,

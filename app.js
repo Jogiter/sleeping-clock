@@ -22,7 +22,7 @@ App({
             console.log(res.code);
             //发起网络请求
             wx.request({
-              url: 'http://alarm-env.kf4bear4rq.ap-northeast-1.elasticbeanstalk.com/wx/openid',
+              url: 'http://alarm-env.ap-northeast-1.elasticbeanstalk.com/wx/openid',
               data: {
                 code: res.code,
 

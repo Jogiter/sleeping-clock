@@ -43,7 +43,7 @@
   text-align: left;
 }
 .footer {
-  padding-top: 30px;
+  padding: 30px;
 }
 .footer .tips {
   width: 260px;

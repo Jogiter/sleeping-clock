@@ -36,12 +36,19 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 1,
 			"list": [
 				{
 					"id": -1,
 					"name": "1",
-					"pathName": "pages/settime/index"
+					"pathName": "pages/settime/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "1",
+					"pathName": "pages/sleep/index",
+					"query": ""
 				}
 			]
 		}

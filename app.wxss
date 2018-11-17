@@ -1,6 +1,6 @@
 .center {
-  display: block;
-  text-align: center;
+  display: flex;
+  flex-flow: column;
 }
 .flex {
   display: flex;
@@ -13,22 +13,26 @@
   justify-content: space-around;
 }
 .primary {
-  width: 160px;
-  line-height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+
+  width: 200px;
+
   border-radius: 4px;
   color: rgba(16, 16, 16, 1);
   font-size: 14px;
-  text-align: center;
   font-family: "Microsoft Yahei";
-  border: 1px solid rgba(187, 187, 187, 1);
-  margin: auto;
+  border: 2px solid rgba(187, 187, 187, 1);
+  margin: 60rpx;
 }
 .wrapper {
   padding: 30px 30px;
 }
 .btn {
-  border: 1px solid #FFBBBBBB;
-  font-size: 16px;
+  border: 2px solid #FFBBBBBB;
+  font-size: 14px;
   text-align: center;
   color: #101010;
   font-family: 'Microsoft Yahei';

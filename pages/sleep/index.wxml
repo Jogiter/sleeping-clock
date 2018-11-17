@@ -17,8 +17,8 @@
       </view>
     </view>
     <view class="footer center">
-      <text class="tips">今天已有560人睡了，你也快睡吧</text>
-      <view class="btn primary" bindtap="goodNight">转发朋友圈，道声晚安</view>
+      <view class="tips">今天已有560人睡了，你也快睡吧</view>
+      <button class="btn primary" open-type='share'>转发朋友圈，道声晚安</button>
     </view>
   </view>
 </view>

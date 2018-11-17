@@ -10,7 +10,8 @@ Page({
     hasSetClock: false,
     canIUse: wx.canIUse("button.open-type.getUserInfo"),
     orderinfo: {},
-    orderTxt: {}
+    orderTxt: {},
+    count:{},
   },
 
 
@@ -24,12 +25,12 @@ Page({
 
 
   renew: function() {
-    wx.redirectTo({
+    wx.navigateTo({
       url: "../settime/index"
     });
   },
 
-
+//拼凑成订单日期数据
   setOrderText: function(userinfo) {
     let start = new Date(userinfo.start_date).toLocaleDateString().split('/').join('.')
     let end = new Date(new Date(userinfo.start_date).getTime() + 3600 * 1000 * 24 * userinfo.push_days).toLocaleDateString().split('/').join('.')
@@ -133,7 +134,7 @@ Page({
     //如果用户有openid,则请求orderlist数据，并执行得出orderTxt
     if (app.globalData.openid) {
       wx.request({
-        url: 'http://alarm-env.kf4bear4rq.ap-northeast-1.elasticbeanstalk.com/user',
+        url: 'http://alarm-env.ap-northeast-1.elasticbeanstalk.com/user',
         data: {
           id: app.globalData.openid
         },
@@ -144,6 +145,10 @@ Page({
               orderinfo: res.data.orderlist,
             })
           }
+
+          this.setData({
+            count:res.data.count,
+          })
 
 
 
