@@ -13,7 +13,7 @@
     </view>
     <view class="footer center setted" wx:else>
       <text>我的设置</text>
-      <text>{{orderTxt}}</text>
+      <text wx:for="{{orderList}}" wx:key="index">{{item}}</text>
       <view class="bdb" bindtap="renew">续订</view>
     </view>
   </view>
