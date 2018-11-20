@@ -4,10 +4,11 @@ const app = getApp();
 
 Page({
   data: {
-    sharesrc:'https://img.jogiter.cn/clock/7666b6d04c1280f6854bcf25a104f3e7ecfdd566',
+    sharesrc:
+      "https://img.jogiter.cn/clock/7666b6d04c1280f6854bcf25a104f3e7ecfdd566",
     userInfo: {},
     hasMusic: false,
-    msgid: {},
+    msgid: 1,
     avatar: "http://img.jogiter.cn/lm.jpg",
     nickname: "鲁鲁修的位",
     title: "标题",
@@ -32,7 +33,7 @@ Page({
 
   onLoad: function(option) {
     this.setData({
-      msgid: option.id
+      msgid: option.id || 1
     });
 
     if (app.globalData.userInfo) {
@@ -70,13 +71,15 @@ Page({
       },
       success: res => {
         let data = res.data.data;
-        this.setData({
-          avatar: data.avatar,
-          nickname: data.nickname,
-          title: data.title,
-          desc: data.desc,
-          image: data.image
-        });
+        if (data) {
+          this.setData({
+            avatar: data.avatar,
+            nickname: data.nickname,
+            title: data.title,
+            desc: data.desc,
+            image: data.image
+          });
+        }
         console.log(this.data.msgid);
       }
     });
@@ -85,7 +88,7 @@ Page({
   onShareAppMessage: function(e) {
     return {
       title: "今天睡了么，让我来哄你睡吧~",
-      path: "/pages/sleep/index?id=" + this.data.msgid,
+      path: "/pages/sleep/index?id=" + this.data.msgid
     };
   },
 
