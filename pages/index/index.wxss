@@ -1,3 +1,33 @@
+page{
+  background-image: url('https://img.jogiter.cn/clock/ad703b58dd3cc934f3cd127890f351ebe707da16');
+  background-size: 100%;
+}
+
+.topimg{
+
+  width: 617rpx;
+  height: 197rpx;
+}
+.topimgview{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.array{
+  color:white;
+  margin-top: 40rpx;
+  margin-bottom: 80rpx;
+
+}
+
+.buttonimg{
+
+  width:427rpx;
+  height: 95rpx;
+}
 text {
   font-size: 14px;
   color: rgba(16, 16, 16, 1);
@@ -11,19 +41,24 @@ text {
 }
 .tips text {
   margin-bottom: 20px;
+  color:white;
 }
 .footer {
   margin-top: 40px;
+  color: white;
+  font-size: 28rpx;
 }
 .notset .primary {
-  margin-top: 15px;
+  margin-top: 20rpx;
+
 }
 .setted text {
   line-height: 22px;
-  color: rgba(166, 166, 166, 1);
+  color: white;
   font-size: 16px;
   text-align: center;
   font-family: "PingFangSC-regular";
+
 }
 .setted a {
   margin-top: 10px;
@@ -33,4 +68,10 @@ text {
   font-size: 16px;
   text-align: center;
   font-family: "PingFangSC-regular";
+}
+.buttonnew{
+  padding:0;
+  width:427rpx;
+  height: 95rpx;
+  margin-bottom: 40rpx;
 }

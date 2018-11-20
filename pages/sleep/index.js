@@ -4,6 +4,7 @@ const app = getApp();
 
 Page({
   data: {
+    sharesrc:'https://img.jogiter.cn/clock/7666b6d04c1280f6854bcf25a104f3e7ecfdd566',
     userInfo: {},
     hasMusic: false,
     msgid: {},

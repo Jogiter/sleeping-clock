@@ -1,8 +1,25 @@
+page{
+  background-image: url('https://img.jogiter.cn/clock/e99793d74dec5ad47f36f8cd694e07f114a8f2c6');
+  background-size: 100%;
+}
+
+
 .msg {
   padding-top: 25px;
   padding-bottom: 40px;
-  border-bottom: 1px solid rgba(187, 187, 187, 1);
   min-height: 260px;
+}
+
+.sharebutton{
+  width: 320rpx;
+  height: 93rpx;
+}
+
+.buttonnew1{
+  width: 320rpx;
+  height: 93rpx;
+  padding: 0;
+
 }
 
 .bgi {
@@ -34,14 +51,14 @@
 .msg .header .name {
   height: 30px;
   line-height: 30px;
-  color: rgba(16, 16, 16, 1);
-  font-size: 16px;
+  color: white;
+  font-size: 28rpx;
 }
 
 .msg .text {}
 
 .msg .text text {
-  color: rgba(16, 16, 16, 1);
+  color: white;
   font-size: 14px;
   line-height: 22px;
   text-align: left;
@@ -53,10 +70,12 @@
 
 .footer .tips {
   width: 260px;
-  color: rgba(16, 16, 16, 1);
+  color: white;
   font-size: 14px;
   line-height: 20px;
   text-align: center;
+  margin-bottom: 40rpx;
+  margin-top: 40rpx;
 }
 
 .footer .btn {

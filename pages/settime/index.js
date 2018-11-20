@@ -11,7 +11,9 @@ Page({
     start_date: {},
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse("button.open-type.getUserInfo")
+    canIUse: wx.canIUse("button.open-type.getUserInfo"),
+    thirtysrc: 'https://img.jogiter.cn/clock/325119a429f02d3841137b739b373434ff02decb',
+    sevensrc: "https://img.jogiter.cn/clock/430da88d37c5b18fdb88a9643248d66e0cb2260a"
   },
 
   //时间处理函数
@@ -40,7 +42,7 @@ Page({
     var d = dd.getDate();
     var date = y + '-' + m + '-' + d;
     console.log(date);
-//获取明天的日期
+    //获取明天的日期
     this.setData({
       start_date: date,
 
@@ -84,13 +86,13 @@ Page({
       console.log(event.detail.formId);
       wx.request({
         url: "https://serverssl.szdazizai.com/setclock",
-        method:"POST",
+        method: "POST",
         data: {
           uid: app.globalData.openid,
           start_date: this.data.date,
           push_days: event.detail.target.dataset.day,
           push_time: this.data.time,
-          template_id:event.detail.formId,
+          template_id: event.detail.formId,
 
         },
 

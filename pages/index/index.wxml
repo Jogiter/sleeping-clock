@@ -1,20 +1,29 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="wrapper">
-    <text>每天烦躁压力大睡不着？习惯性熬夜？不习惯孤独入睡？来试试哄睡闹钟吧</text>
+
+<view class="wrapper">
+  <view class="topimgview">
+    <image class='topimg' src="{{topimgsrc}}"></image>
+  </view>
+
+  <view class="footer center notset" wx:if="{{!hasSetClock}}">
     <view class="tips">
       <text>每天一段暖心舒缓的美文、一张让你心旷神怡的图片，让你沉静下来</text>
       <text>也有其他用户投稿的温馨哄睡话语，让你睡前感受心的温暖</text>
       <text>做个健康早睡的人，从这一刻开始吧~</text>
     </view>
-    <view class="footer center notset" wx:if="{{!hasSetClock}}">
-      <view>今天已有{{ count }}人睡了</view>
-      <button open-type='getUserInfo' class='button1' bindgetuserinfo='getUserInfo'>设置我的哄睡闹钟</button>
+
+    <button open-type='getUserInfo' class='buttonnew' bindgetuserinfo='getUserInfo'>
+      <image class='buttonimg' src='{{buttonimgsrc1}}'></image>
+    </button>
+    <view>今天已有{{ count }}人睡了</view>
+  </view>
+  <view class="footer center setted" wx:else="wx:else">
+    <text>我的设置</text>
+    <view class="array">
+      <view wx:for="{{orderList}}" wx:key="index">{{item}}</view>
     </view>
-    <view class="footer center setted" wx:else>
-      <text>我的设置</text>
-      <text wx:for="{{orderList}}" wx:key="index">{{item}}</text>
-      <view class="bdb" bindtap="renew">续订</view>
+    <view bindtap="renew">
+      <image class='buttonimg' src='{{buttonimgsrc2}}'></image>
     </view>
   </view>
 </view>

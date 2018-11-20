@@ -1,5 +1,5 @@
 .center {
-  
+
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -11,6 +11,7 @@
 }
 .jcb {
   justify-content: space-between;
+
 }
 .bca {
   justify-content: space-around;
@@ -31,7 +32,10 @@
   margin: 60rpx;
 }
 .wrapper {
-  padding: 30px 30px;
+  margin:60rpx;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 }
 .btn {
   border: 2px solid #FFBBBBBB;
@@ -43,7 +47,4 @@
 }
 text {
   display: inline-block;
-}
-.bdb {
-  border-bottom: 1px solid #ccc;
 }

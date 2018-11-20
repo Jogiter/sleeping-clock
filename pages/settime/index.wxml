@@ -25,17 +25,19 @@
             </view>
           </picker>
         </view>
-        <text>每天到了设置时间，会通过小程序的服务消息推送哄睡内容给你</text>
+        <text class="tip">每天到了设置时间，会通过小程序的服务消息推送哄睡内容给你</text>
       </view>
     </view>
   </view>
   <view class="btn-group flex jcb">
-    <button class="btn primary" data-day="7" formType="submit">
-      <text class="day">连续推送7天</text>
+    <button class='buttonneww' data-day="7" formType="submit">
+      <image class='imgbutton' src="{{sevensrc}}"></image>
+
 
     </button>
-    <button class="btn primary" data-day="30" formType="submit">
-      <text class="day">连续推送30天</text>
+    <button class='buttonneww' data-day="30" formType="submit">
+      <image class='imgbutton' src="{{thirtysrc}}"></image>
+
 
     </button>
   </view>

@@ -11,7 +11,10 @@ Page({
     canIUse: wx.canIUse("button.open-type.getUserInfo"),
     orderList: {},
     orderTxt: {},
-    count: {}
+    count: {},
+    topimgsrc:'https://img.jogiter.cn/clock/b06f19aa822053b223437138c77569c20430fbc4',
+    buttonimgsrc1:'https://img.jogiter.cn/clock/317b2ff96618b8c5c83ab448638e17cc3405b541',
+    buttonimgsrc2:'https://img.jogiter.cn/clock/d6a4afe2e109e8e4c9f240e70a45efd126fd98f3',
   },
 
   // 事件处理函数
