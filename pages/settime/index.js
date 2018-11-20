@@ -40,7 +40,7 @@ Page({
     var d = dd.getDate();
     var date = y + '-' + m + '-' + d;
     console.log(date);
-
+//获取明天的日期
     this.setData({
       start_date: date,
 
@@ -83,7 +83,7 @@ Page({
       console.log(event.detail.target.dataset.day);
       console.log(event.detail.formId);
       wx.request({
-        url: "http://alarm-env.ap-northeast-1.elasticbeanstalk.com/setclock",
+        url: "https://serverssl.szdazizai.com/setclock",
         method:"POST",
         data: {
           uid: app.globalData.openid,

@@ -63,9 +63,9 @@ Page({
 
     //get页面所需要的参数
     wx.request({
-      url: "http://alarm-env.ap-northeast-1.elasticbeanstalk.com/msg",
+      url: "https://serverssl.szdazizai.com/msg",
       data: {
-        id: option.id || 1
+        id: this.data.msgid || 1
       },
       success: res => {
         let data = res.data.data;
@@ -84,7 +84,7 @@ Page({
   onShareAppMessage: function(e) {
     return {
       title: "今天睡了么，让我来哄你睡吧~",
-      path: "/pages/sleep/index?id=" + this.data.id
+      path: "/pages/sleep/index?id=" + this.data.msgid,
     };
   },
 

@@ -165,7 +165,7 @@ Page({
 
     if (app.globalData.openid) {
       wx.request({
-        url: "http://alarm-env.ap-northeast-1.elasticbeanstalk.com/user",
+        url: "https://serverssl.szdazizai.com/user",
         data: {
           id: app.globalData.openid
         },
