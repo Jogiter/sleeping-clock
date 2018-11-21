@@ -14,11 +14,11 @@
         </view>
       </view>
     </view>
-    <!-- <view class="footer center">
+    <view class="footer center">
       <view class="tips">今天已有560人睡了，你也快睡吧</view>
       <button class="buttonnew1" open-type='share'>
       <image class='sharebutton' src='{{sharesrc}}'></image>
       </button>
-    </view> -->
+    </view>
   </view>
   </view>
