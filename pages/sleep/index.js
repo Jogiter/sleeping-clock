@@ -8,7 +8,7 @@ Page({
     userInfo: {},
     hasMusic: false,
     msgid: {},
-    avatar: "http://img.jogiter.cn/lm.jpg",
+    avatar: "https://img.jogiter.cn/lm.jpg",
     nickname: "鲁鲁修的位",
     title: "标题",
     desc:
@@ -66,9 +66,10 @@ Page({
     wx.request({
       url: "https://serverssl.szdazizai.com/msg",
       data: {
-        id: this.data.msgid || 1
+        id: this.data.msgid || 1,
       },
       success: res => {
+        console.log(res.data.data);
         let data = res.data.data;
         this.setData({
           avatar: data.avatar,
@@ -77,7 +78,7 @@ Page({
           desc: data.desc,
           image: data.image
         });
-        console.log(this.data.msgid);
+        console.log('id'+data.id);
       }
     });
   },

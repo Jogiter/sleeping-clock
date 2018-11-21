@@ -32,10 +32,19 @@
   margin: 60rpx;
 }
 .wrapper {
-  margin:60rpx;
+  margin-top: 60rpx;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
+
+
+}
+
+.wrapper1 {
+  margin-top: 60rpx;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+
 }
 .btn {
   border: 2px solid #FFBBBBBB;
