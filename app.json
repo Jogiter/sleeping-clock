@@ -11,6 +11,6 @@
     "navigationBarTitleText": "哄睡闹钟",
     "navigationBarTextStyle": "#fff"
   },
-  
-  "debug": true
+
+  "debug": false
 }

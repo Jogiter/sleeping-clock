@@ -4,11 +4,17 @@ const app = getApp();
 
 Page({
   data: {
-    sharesrc:'https://img.jogiter.cn/clock/7666b6d04c1280f6854bcf25a104f3e7ecfdd566',
+    sharesrc:
+      "https://img.jogiter.cn/clock/7666b6d04c1280f6854bcf25a104f3e7ecfdd566",
     userInfo: {},
     hasMusic: false,
+<<<<<<< HEAD
     msgid: {},
     avatar: "https://img.jogiter.cn/lm.jpg",
+=======
+    msgid: 1,
+    avatar: "http://img.jogiter.cn/lm.jpg",
+>>>>>>> 3397cf82ca8979436bca407e4b6dab9d6e4710bb
     nickname: "鲁鲁修的位",
     title: "标题",
     desc:
@@ -32,7 +38,7 @@ Page({
 
   onLoad: function(option) {
     this.setData({
-      msgid: option.id
+      msgid: option.id || 1
     });
 
     if (app.globalData.userInfo) {
@@ -71,6 +77,7 @@ Page({
       success: res => {
         console.log(res.data.data);
         let data = res.data.data;
+<<<<<<< HEAD
         this.setData({
           avatar: data.avatar,
           nickname: data.nickname,
@@ -79,6 +86,18 @@ Page({
           image: data.image
         });
         console.log('id'+data.id);
+=======
+        if (data) {
+          this.setData({
+            avatar: data.avatar,
+            nickname: data.nickname,
+            title: data.title,
+            desc: data.desc,
+            image: data.image
+          });
+        }
+        console.log(this.data.msgid);
+>>>>>>> 3397cf82ca8979436bca407e4b6dab9d6e4710bb
       }
     });
   },
@@ -86,7 +105,7 @@ Page({
   onShareAppMessage: function(e) {
     return {
       title: "今天睡了么，让我来哄你睡吧~",
-      path: "/pages/sleep/index?id=" + this.data.msgid,
+      path: "/pages/sleep/index?id=" + this.data.msgid
     };
   },
 
