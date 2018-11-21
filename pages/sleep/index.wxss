@@ -29,8 +29,9 @@ page{
   background-size: 100% auto;
   background-repeat: no-repeat;
   border-radius: 5px;
-  padding: 0 10px;
+  padding: 0 20rpx;
   margin-left: 30rpx;
+
 
 }
 
