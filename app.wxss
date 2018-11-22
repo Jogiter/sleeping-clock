@@ -10,7 +10,7 @@
   box-sizing: border-box;
 }
 .jcb {
-  justify-content: space-between;
+  justify-content: space-around;
 
 }
 .bca {

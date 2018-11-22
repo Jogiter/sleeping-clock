@@ -1,45 +1,68 @@
 <!--index.wxml-->
 <form bindsubmit="push" report-submit="true">
-<view class="container">
-  <view class="wrapper">
-    <view class="flex jcb">
-      <text class="title">开始日期</text>
-      <view class="content">
-        <view class="ipt">
-          <picker name='date' mode="date" start="{{start_date}}" end="2022-01-01" bindchange="dateChange">
-            <view class="picker">
-              {{date}}
-            </view>
-          </picker>
-        </view>
+  <view class="container">
+    <view class="wrapper">
+      <view class="flex jcb">
+        <text class="title">开始日期</text>
+        <view class="content">
+          <view class="ipt11">
+            {{start_date}}
 
+          </view>
+
+        </view>
+      </view>
+      <view class="flex jcb">
+        <text class="title">闹钟时间</text>
+        <view class="content">
+          <view class="ipt">
+            <picker name='time' mode="time" :value="time" start="00:00" end="23:59" bindchange="timeChange">
+              <view class="picker">
+                {{time}}
+              </view>
+            </picker>
+          </view>
+          <text class="tip">每天到了设置时间，会通过小程序的服务消息推送哄睡内容给你</text>
+        </view>
       </view>
     </view>
-    <view class="flex jcb">
-      <text class="title">闹钟时间</text>
-      <view class="content">
-        <view class="ipt">
-          <picker name='time' mode="time" :value="time" start="00:00" end="23:59" bindchange="timeChange">
-            <view class="picker">
-              {{time}}
+
+    <button class='btn1' data-day="7" formType="submit">
+      <view class='vv'>
+        <form bindsubmit="push" report-submit="true">
+          <button class="btn1" formType='submit'>
+            <view class='vv'>
+              <form bindsubmit="push" report-submit="true">
+                <button class="btn1" formType='submit'>
+                  <view class='vv'>
+                    <form bindsubmit="push" report-submit="true">
+                      <button class="btn1" formType='submit'>
+                        <view class='vv'>
+                          <form bindsubmit="push" report-submit="true">
+                            <button class="btn1" formType='submit'>
+                              <view class='vv'>
+                                <form bindsubmit="push" report-submit="true">
+                                  <button class="btn1" formType='submit'>
+                                    <view class='vv'>
+                                      <image class='imgbutton' src="{{sevensrc}}"></image>
+                                    </view>
+                                  </button>
+                                </form>
+                              </view>
+                            </button>
+                          </form>
+                        </view>
+                      </button>
+                    </form>
+                  </view>
+                </button>
+              </form>
             </view>
-          </picker>
-        </view>
-        <text class="tip">每天到了设置时间，会通过小程序的服务消息推送哄睡内容给你</text>
+          </button>
+        </form>
       </view>
-    </view>
-  </view>
-  <view class="btn-group flex jcb">
-    <button class='buttonneww' data-day="7" formType="submit">
-      <image class='imgbutton' src="{{sevensrc}}"></image>
-
 
     </button>
-    <button class='buttonneww' data-day="30" formType="submit">
-      <image class='imgbutton' src="{{thirtysrc}}"></image>
 
-
-    </button>
   </view>
-</view>
 </form>

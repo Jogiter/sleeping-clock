@@ -26,11 +26,11 @@ page{
 
   width: 640rpx;
   height: 820rpx;
-  background-size: 100% auto;
+  background-size: 100%;
   background-repeat: no-repeat;
   border-radius: 5px;
-  padding: 0 20rpx;
-  margin-left: 30rpx;
+  padding-left: 40rpx;
+  margin-left: 35rpx;
 
 
 }

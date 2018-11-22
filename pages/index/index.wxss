@@ -20,6 +20,8 @@ page{
   color:white;
   margin-top: 40rpx;
   margin-bottom: 80rpx;
+  height:400rpx;
+  overflow: scroll;
 
 }
 
@@ -34,7 +36,7 @@ text {
   line-height: 20px;
 }
 .tips {
-  margin-top: 30px;
+  margin: 40rpx;
   padding: 20px;
   color: #FF101010;
   border: 1px solid #FF101010;
