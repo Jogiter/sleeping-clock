@@ -86,7 +86,7 @@ Page({
 
   onShareAppMessage: function(e) {
     return {
-      title: "今天睡了么，让我来哄你睡吧~",
+      title: "今天睡了么，让我来哄你睡觉吧~",
       path: "/pages/sleep/index?id=" + this.data.msgid
     };
   },

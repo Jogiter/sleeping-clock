@@ -193,5 +193,16 @@ Page({
         }
       });
     }
+  },
+
+
+  onShareAppMessage:e=>{
+
+
+    return{
+      title:'让有趣的灵魂跟你说晚安，试试哄睡闹钟吧~',
+      
+    }
+
   }
 });
