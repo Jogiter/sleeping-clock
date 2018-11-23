@@ -12,9 +12,12 @@ Page({
     orderList: {},
     orderTxt: {},
     count: {},
-    topimgsrc:'https://img.jogiter.cn/clock/b06f19aa822053b223437138c77569c20430fbc4',
-    buttonimgsrc1:'https://img.jogiter.cn/clock/317b2ff96618b8c5c83ab448638e17cc3405b541',
-    buttonimgsrc2:'https://img.jogiter.cn/clock/d6a4afe2e109e8e4c9f240e70a45efd126fd98f3',
+    topimgsrc:
+      "https://img.jogiter.cn/clock/b06f19aa822053b223437138c77569c20430fbc4",
+    buttonimgsrc1:
+      "https://img.jogiter.cn/clock/317b2ff96618b8c5c83ab448638e17cc3405b541",
+    buttonimgsrc2:
+      "https://img.jogiter.cn/clock/d6a4afe2e109e8e4c9f240e70a45efd126fd98f3"
   },
 
   // 事件处理函数
@@ -36,17 +39,22 @@ Page({
     console.log(userinfo.start_date);
     console.log(userinfo.push_days);
 
-    let start = new Date(userinfo.start_date)
-      .toLocaleDateString()
-      .split("/")
-      .join(".");
-    let end = new Date(
+    function dateToYMD(date) {
+      var gap = ".";
+      var d = date.getDate();
+      var m = date.getMonth() + 1; //Month from 0 to 11
+      var y = date.getFullYear();
+      return (
+        "" + y + gap + (m <= 9 ? "0" + m : m) + gap + (d <= 9 ? "0" + d : d)
+      );
+    }
+
+    let start = dateToYMD(new Date(userinfo.start_date));
+    let endDate = new Date(
       new Date(userinfo.start_date).getTime() +
         3600 * 1000 * 24 * userinfo.push_days
-    )
-      .toLocaleDateString()
-      .split("/")
-      .join(".");
+    );
+    let end = dateToYMD(endDate);
     let txt = `${start}-${end} 每天 ${userinfo.push_time}`;
     console.log(txt);
     return txt;
