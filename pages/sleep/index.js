@@ -2,6 +2,9 @@
 //获取应用实例
 const app = getApp();
 
+var util = require("../../utils/util.js");
+var domain = util.domain();
+
 Page({
   data: {
     sharesrc:
@@ -65,9 +68,9 @@ Page({
 
     //get页面所需要的参数
     wx.request({
-      url: "https://serverssl.szdazizai.com/msg",
+      url: `${domain}/msg`,
       data: {
-        id: this.data.msgid || 1,
+        id: this.data.msgid || 1
       },
       success: res => {
         console.log(res.data.data);
@@ -79,7 +82,7 @@ Page({
           desc: data.desc,
           image: data.image
         });
-        console.log('id'+data.id);
+        console.log("id" + data.id);
       }
     });
   },
