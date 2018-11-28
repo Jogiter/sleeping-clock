@@ -19,7 +19,7 @@ page{
 .array{
   color:white;
   margin-top: 40rpx;
-  margin-bottom: 80rpx;
+  margin-bottom: 40rpx;
   height:400rpx;
   overflow: scroll;
 
@@ -29,6 +29,7 @@ page{
 
   width:427rpx;
   height: 95rpx;
+  margin-bottom: 20rpx;
 }
 text {
   font-size: 14px;
@@ -75,5 +76,24 @@ text {
   padding:0;
   width:427rpx;
   height: 95rpx;
-  margin-bottom: 40rpx;
+  margin-bottom: 20rpx;
+}
+
+.contact{
+  margin-top: 60rpx;
+  width: 80rpx;
+  height: 80rpx;
+  padding: 0;
+  background-color: transparent;
+  position: fixed;
+  right:40rpx;
+  bottom: 40rpx;
+}
+.contact::after{
+  border:0;
+}
+
+.contactimg{
+  width: 80rpx;
+  height: 80rpx;
 }

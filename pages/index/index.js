@@ -5,6 +5,7 @@ const domain = "http://localhost:3000";
 
 Page({
   data: {
+    contactimg:'https://img.jogiter.cn/clock/779a57d7fe5b90e6ca7657031e9999939c128ebe',
     userInfo: {},
     hasUserInfo: false,
     hasSetClock: false,
@@ -201,7 +202,7 @@ Page({
 
     return{
       title:'让有趣的灵魂跟你说晚安，试试哄睡闹钟吧~',
-      
+
     }
 
   }

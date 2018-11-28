@@ -25,5 +25,10 @@
     <view bindtap="renew">
       <image class='buttonimg' src='{{buttonimgsrc2}}'></image>
     </view>
+    <view>今天已有{{ count }}人睡了</view>
   </view>
+
 </view>
+  <button class='contact' open-type='contact'>
+    <image class='contactimg' src='{{contactimg}}'></image>
+  </button>
