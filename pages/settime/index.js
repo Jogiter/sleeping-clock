@@ -2,6 +2,9 @@
 //获取应用实例
 const app = getApp();
 
+var util = require("../../utils/util.js");
+var domain = util.domain();
+
 Page({
   data: {
     time: "请选择时间",
@@ -75,7 +78,7 @@ Page({
     if (this.arrayData.tempid.length >= 6) {
       //请求post
       wx.request({
-        url: "https://serverssl.szdazizai.com/setclock",
+        url: `${domain}/setclock`,
         method: "POST",
         data: {
           uid: app.globalData.openid,

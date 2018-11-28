@@ -1,7 +1,8 @@
 //index.js
 //获取应用实例
 const app = getApp();
-const domain = "http://localhost:3000";
+var util = require("../../utils/util.js");
+var domain = util.domain();
 
 Page({
   data: {
@@ -177,7 +178,7 @@ Page({
 
     if (app.globalData.openid) {
       wx.request({
-        url: "https://serverssl.szdazizai.com/user",
+        url: `${domain}/user`,
         data: {
           id: app.globalData.openid
         },
@@ -196,6 +197,7 @@ Page({
     }
   },
 
+<<<<<<< HEAD
 
   onShareAppMessage:e=>{
 
@@ -205,5 +207,11 @@ Page({
 
     }
 
+=======
+  onShareAppMessage: e => {
+    return {
+      title: "让有趣的灵魂跟你说晚安，试试哄睡闹钟吧~"
+    };
+>>>>>>> 52cb2bdda172105c556ac3177b533650689b7970
   }
 });
