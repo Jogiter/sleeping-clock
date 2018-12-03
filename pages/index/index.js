@@ -196,22 +196,9 @@ Page({
       });
     }
   },
-
-<<<<<<< HEAD
-
-  onShareAppMessage:e=>{
-
-
-    return{
-      title:'让有趣的灵魂跟你说晚安，试试哄睡闹钟吧~',
-
-    }
-
-=======
   onShareAppMessage: e => {
     return {
       title: "让有趣的灵魂跟你说晚安，试试哄睡闹钟吧~"
     };
->>>>>>> 52cb2bdda172105c556ac3177b533650689b7970
   }
 });
